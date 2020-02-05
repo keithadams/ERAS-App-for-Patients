@@ -1,0 +1,51 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Day After Surgery
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="day-after-surgery-page" padding>
+    
+    <ion-card><ion-card-header><h3>{{ item.title }}</h3></ion-card-header></ion-card>
+
+  <ion-card *ngFor="let section of item.sections">
+
+
+    <div *ngIf="section.layout === 'image-above-text-below'">
+        <ion-item>
+            <img class="above-below-image" [src]="section.image" *ngIf="section.image != undefined">
+        </ion-item>
+      
+        <ion-item text-wrap class="paragraph">  
+            {{section.description}} 
+        </ion-item>
+       
+    </div>
+
+    <div *ngIf="section.layout === 'image-below-text-above'">
+     <ion-item class="paragraph" text-wrap>         
+        {{section.description}}
+        </ion-item>
+          
+        <ion-item >
+            <img [src]="section.image" *ngIf="section.image != undefined">
+        </ion-item>
+      
+    </div>
+
+
+    <div *ngIf= "section.layout === 'text-only'">
+        <ion-item class="paragraph" text-wrap>{{ section.description }}</ion-item>
+    </div>
+    
+    <div *ngIf= "section.layout === 'image-only'">
+      <img [src]="section.image" *ngIf="section.image != undefined">
+    </div>
+
+  </ion-card>
+    
+</ion-content>

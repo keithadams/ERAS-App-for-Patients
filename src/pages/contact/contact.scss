@@ -1,0 +1,48 @@
+page-contact{
+    
+    .contact-page{
+        
+        background-color:#edf5f9;
+    }
+
+    ion-card img.customized-image{
+    max-height: 100px !important;
+    width:auto;
+    border-radius:20px;   
+    margin:auto;
+        
+    }
+    ion-card {
+       text-align: center;
+    }
+    
+    ion-card p{
+       text-align: center;
+       padding-top:5px;
+        
+    }
+    
+    ion-card-header{
+        background-color:#f5dd71;
+    }
+
+    @media only screen and (device-width: 768px) {
+        
+     
+    
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){
+    
+  
+        
+    }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+}
+    
+    
+    
+   
+}

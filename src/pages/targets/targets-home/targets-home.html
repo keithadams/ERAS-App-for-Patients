@@ -1,0 +1,94 @@
+<!--
+  Generated template for the Targets page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button clear (click)="unhideCards()">Unhide</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="cards">
+    <div class="center-div">
+
+      <ion-card *ngFor="let card of cards" [hidden]="card.hidden">
+        <ion-card-header>
+          <h2>{{card.title}}</h2>
+        </ion-card-header>
+
+
+        <div class="card-image">
+          <img [src]="card.image"  *ngIf="card.image != undefined"/>
+        </div>
+
+          <ion-list inset *ngIf="card.type == 'checkmark'">
+            <ion-card-content padding>
+              <h3>{{card.question}}</h3>
+            </ion-card-content>
+            <ion-item *ngFor="let answer of card.answers;let i = index;" text-wrap>
+              <ion-label>{{answer}}</ion-label>
+              <ion-checkbox value="answer" [checked]="card.selectedValue[i]" (ionChange)='change($event,card,i)'></ion-checkbox>
+            </ion-item>
+          </ion-list>
+
+          <ion-list inset radio-group *ngIf="card.type == 'radio'"[(ngModel)]='card.selectedValue'>
+            <ion-card-content padding>
+              <h3>{{card.question}}</h3>
+            </ion-card-content>  
+            <ion-item *ngFor="let answer of card.answers;">
+              <ion-label>{{answer}}</ion-label>
+              <ion-radio [value]="answer" (ionSelect)='change($event,card)'></ion-radio>
+            </ion-item>      
+          </ion-list>
+
+          <ion-list radio-group *ngIf="card.type == 'information'">
+            <ion-card-content padding>
+              <h3>{{card.question}}</h3>
+            </ion-card-content> 
+          </ion-list>
+
+          <ion-list *ngIf="card.type == 'time'">
+            <ion-card-content padding>
+              <h3>{{card.question}}</h3>
+            </ion-card-content>
+            <ion-item >
+              <ion-label color="primary">{{card.label}}</ion-label>
+              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="card.selectedValue" (ionChange)='change($event,card)'></ion-datetime>
+            </ion-item>
+          </ion-list>
+
+          <ion-row>
+            <ion-col>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col>
+              <div *ngIf="card.type == 'information'">
+                <button ion-button color="primary" (click)="hideCard(card)" icon-left>
+                  Hide
+                </button>
+              </div>
+              <div *ngIf="card.type == 'radio' || card.type == 'time' || card.type == 'checkmark'">
+                <button ion-button color="primary" (click)="hideCard(card)" icon-left *ngIf="card.touched">
+                  Hide
+                </button>
+                <button ion-button color="light" icon-left *ngIf="!card.touched">
+                  Hide
+                </button>
+              </div>
+            </ion-col>
+          </ion-row>
+
+      </ion-card>
+
+      </div>
+</ion-content>

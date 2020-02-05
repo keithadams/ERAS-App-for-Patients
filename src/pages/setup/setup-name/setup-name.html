@@ -1,0 +1,50 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Setup: Name
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="setup" padding>
+  
+  <p style="font-size:1.3em;">Please enter your first and last name as shown on your medical record.</p>
+
+  <!--<p>Please enter your first and last name as shown on your medical record.</p>-->
+  <ion-list >
+    <ion-item>
+      <ion-label color="primary">First Name</ion-label>
+      <ion-input clearInput type="text" placeholder="" [(ngModel)]="firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Last Name</ion-label>
+      <ion-input clearInput type="text" placeholder="" [(ngModel)]="lastName"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <p [hidden]="!firstNameError" class="error-message"> Enter a First Name</p>
+  <p [hidden]="!lastNameError" class="error-message"> Enter a Last Name</p> 
+
+  <ion-row no-padding>
+
+    <ion-col no padding>
+      <!--<button ion-button color="primary" (click)="navToPrev()" icon-left>
+        <ion-icon name='arrow-back'></ion-icon>
+        Back
+      </button>-->
+    </ion-col>
+
+    <ion-col no padding>
+    </ion-col>
+
+    <ion-col no padding>
+      <button class="my-button" ion-button (click)="navToNext()" icon-right>
+        Next
+        <ion-icon name='arrow-forward'></ion-icon>
+      </button>
+    </ion-col>
+  
+  </ion-row>
+
+</ion-content>

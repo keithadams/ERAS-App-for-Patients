@@ -1,0 +1,77 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pre-Surgery
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  class="pre-surgery-page">
+    <ion-card text-wrap><ion-card-header><h3 text-wrap>{{ item.title }}</h3></ion-card-header></ion-card>
+
+
+  <ion-card *ngFor="let section of item.sections">
+
+    <div *ngIf="section.layout === 'image-left-text-right'">
+      <ion-row>
+        <ion-item class="left-right-image">
+          <ion-col> 
+              <img  [src]="section.image" *ngIf="section.image != undefined"><button class="watch-videos" *ngIf="section.video_link == true" (click)="navToVideosPage()">Watch Videos</button>
+          </ion-col>
+        </ion-item>
+        <ion-row><ion-item class="paragraph" text-wrap>
+            {{section.description}}</ion-item>   
+        </ion-row>
+      </ion-row>
+        
+       
+    </div>
+
+    <div *ngIf="section.layout === 'image-right-text-left'">
+      <ion-row>
+        <ion-row>
+          <ion-col><ion-item class="paragraph" text-wrap>
+              {{section.description}}</ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-item class="left-right-image">
+          <ion-col >
+            <img [src]="section.image" *ngIf="section.image != undefined">
+          </ion-col>
+        </ion-item>
+      </ion-row>
+    </div>
+
+
+    <div *ngIf= "section.layout === 'text-only'">
+        <ion-item class="paragraph" text-wrap>{{ section.description }}</ion-item>
+    </div>
+    
+    <div *ngIf= "section.layout === 'image-only'">
+      <img [src]="section.image" *ngIf="section.image != undefined">
+    </div>
+      
+       <div *ngIf="section.layout === 'image-below-text-above'">
+            <ion-item class="paragraph" text-wrap>
+                {{section.description}}
+           </ion-item>
+            <ion-item class="above-below-image">
+                <img [src]="section.image" *ngIf="section.image != undefined">
+           </ion-item>
+
+    </div>
+      
+      <div *ngIf="section.layout === 'image-above-text-below'">
+          <ion-item class="above-below-image">
+                <img [src]="section.image" *ngIf="section.image != undefined">
+          </ion-item>
+          <ion-item class="paragraph" text-wrap>
+                {{section.description}}
+           </ion-item>
+  
+    </div>
+
+  </ion-card>
+    
+</ion-content>

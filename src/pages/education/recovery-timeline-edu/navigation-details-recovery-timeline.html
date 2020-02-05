@@ -1,0 +1,24 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Recovery Timeline
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="recovery-timeline-page" padding>
+    
+    <ion-card class="main-card" ><ion-item text-wrap class="title"><h3>{{ item.title }}</h3></ion-item>
+
+  
+  
+<ion-card  text-wrap *ngFor="let section of item.sections">
+    <p class="list-item" *ngIf= "section.layout === 'text-only'">
+     {{ section.description }}
+    </p>
+  </ion-card>
+        
+ 
+    </ion-card>
+</ion-content>

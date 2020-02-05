@@ -1,0 +1,73 @@
+navigation-details-in-hospital{
+    
+    .in-hospital{
+          background-color:#edf5f9; 
+        text-size:1.8em; 
+        
+        
+    }
+    
+    .in-hospital ion-card-header{
+        text-align:center;    
+        background-color:#f5dd71;
+         
+    }
+    
+   
+    
+   .above-below-image{
+        margin:auto;
+        height:50%;
+        width:50%;
+    }
+    
+    .paragraph{
+        
+        line-height:1.3em; 
+        font-size: 1.2em;
+       
+    }
+    
+    .sub-title{
+        margin-botton:0px;
+        background-color:#d5dce0;
+       
+     
+        
+        
+    }
+    
+     @media only screen and (device-width: 768px) {
+        .left-right-image{
+            width:25%;
+        }
+     .above-below-image{
+         width:20%;
+     }
+    
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){
+    
+       .left-right-image{
+            width:25%;
+        }
+     .above-below-image{
+         width:22%;
+     }
+    }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+         .left-right-image{
+            width:25%;
+        }
+     .above-below-image{
+         width:20%;
+     }
+}
+    
+   
+    
+    
+    
+}

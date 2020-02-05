@@ -1,0 +1,59 @@
+<!--
+  Generated template for the SetupDiabetic page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Setup: Diabetic</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="setup" padding>
+  
+  <div *ngIf="!fhir_diabetic">
+    <p style="font-size:1.3em;">Are you Diabetic?</p>
+  </div>
+  <div *ngIf="fhir_diabetic">
+    <p style="font-size:1.3em;">Your health records show that you have Diabetes. Is this correct?</p>
+  </div>
+
+  <ion-list radio-group [(ngModel)]="diabetic">
+    <ion-item>
+      <ion-label>Yes</ion-label>
+      <ion-radio value="Yes"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>No</ion-label>
+      <ion-radio value="No"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+   <p [hidden]="!diabeticError" class="error-message">Please select an answer.</p>
+
+  <ion-row no-padding>
+
+    <ion-col no padding>
+      <button ion-button color="primary" (click)="navToPrev()" icon-left>
+        <ion-icon name='arrow-back'></ion-icon>
+        Back
+      </button>
+    </ion-col>
+
+    <ion-col no padding>
+    </ion-col>
+
+    <ion-col no padding>
+      <button ion-button color="secondary" (click)="submit()" icon-right>
+      Submit
+    </button>
+    </ion-col>
+  
+  </ion-row>
+
+</ion-content>
+  

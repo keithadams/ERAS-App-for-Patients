@@ -1,0 +1,64 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      In Hospital
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="in-hospital" padding>
+    
+   <ion-card ><ion-card-header><h3>{{ item.title }}</h3></ion-card-header></ion-card> 
+    
+  <ion-card *ngFor="let section of item.sections">
+
+
+   <div *ngIf="section.layout === 'image-left-text-right'">
+      <ion-row>
+        <ion-item>
+          <ion-col>
+            <img [src]="section.image" *ngIf="section.image != undefined">
+          </ion-col>
+        </ion-item>
+        <ion-row>
+          {{section.description}}
+        </ion-row>
+      </ion-row>
+    </div>
+
+    <div *ngIf="section.layout === 'image-above-text-below'">
+        <ion-item >
+            <img class="above-below-image" [src]="section.image" *ngIf="section.image != undefined">  
+        </ion-item>  
+        <ion-item text-wrap class="paragraph">
+            {{section.description}}
+          </ion-item>
+        
+    </div>
+
+
+    <div *ngIf= "section.layout === 'text-only'">
+        <ion-item class="paragraph" text-wrap>{{ section.description }}</ion-item>
+    </div>
+      
+     <div *ngIf= "section.layout === 'text-only-title'">
+         <ion-item class="sub-title">{{ section.sub_title }}</ion-item>
+          <ion-item class="paragraph" text-wrap>{{ section.description }}</ion-item>
+    </div>  
+      
+       <div *ngIf= "section.layout === 'title-text-image'">
+         <ion-item class="sub-title">{{ section.sub_title }}</ion-item>
+            <ion-item >
+            <img class="above-below-image" [src]="section.image" *ngIf="section.image != undefined">  
+        </ion-item> 
+          <ion-item class="paragraph" text-wrap>{{ section.description }}</ion-item>
+    </div>  
+    
+    <div *ngIf= "section.layout === 'image-only'">
+      <img [src]="section.image" *ngIf="section.image != undefined">
+    </div>
+
+  </ion-card>
+    
+</ion-content>

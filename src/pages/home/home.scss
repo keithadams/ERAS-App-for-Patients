@@ -1,0 +1,156 @@
+page-home {
+    
+    ion-card{
+        height:auto;
+    }
+    
+    .home-page{
+         background-color: #edf5f9;
+        
+    }
+    
+    h4.page-title, p{
+        
+        color:grey;
+        margin-left:3.5%;
+    }
+    h4.page-title{
+        font-size: 1.2em;
+        
+    }
+    
+    .color1{
+        background-color: #e4e4e4;
+    }
+    
+    .color2{
+        background-color:#b4d5e6;
+    }
+    
+     .color3{
+        background-color:#b4d5e6;
+    }
+    
+     .color4{
+        background-color:#e4e4e4;
+    }
+    
+     .color5{
+        background-color:#f5dd71;
+    }
+    
+    .thumb{
+        height:65px;
+        width:auto;
+        margin-left:20%;
+        text-align: auto;
+    }
+    
+     .emory-logo{
+       height:auto; 
+       max-height:95px; 
+       width:auto; 
+       margin-left:auto;     
+    }
+    
+    div.menu-item{
+        width:49%;
+        height:32%;
+        float:left;
+        margin:1.5px;
+        border-radius: 5px;
+        background-color: #edf5f9;
+    }
+    
+   
+    
+    
+    div.menu-item h3{
+        clear:both;
+        font-size:1.1em;
+        text-align: center;
+        font-family:inherit;
+    }
+    
+    
+     @media only screen and (device-width: 768px) {
+        
+      .emory-logo{
+       height:125px; 
+       width:auto; 
+       margin-left:auto;      
+    }
+         
+           .thumb{
+        margin-left:41%;
+    }
+    
+    
+}
+    
+  
+    
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){
+    
+    .emory-logo{
+      
+       height:125px; 
+       width:auto; 
+       margin-left:auto;      
+    }
+    
+      .thumb{
+        margin-left:41%;
+    }
+    
+        
+    }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    .emory-logo{
+      
+       height:125px; 
+       width:auto; 
+       margin-left:auto;      
+    }
+       
+    .thumb{
+        margin-left:41%;
+    }
+    
+    
+}
+    
+/*iphone 5 */    
+    @media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) { 
+    div.menu-item{
+        width:48.6%;
+    }
+
+    
+    }
+    
+/*iphone 6plus in landscape*/    
+    
+    @media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : landscape) { 
+    
+    div.menu-item{
+        width:49.3%;
+    }
+
+    
+    }
+    
+    
+    
+    
+     
+    
+    
+}

@@ -1,0 +1,86 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Day of Surgery
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="day-of-surgery-page">
+    
+   <ion-card ><ion-card-header><h3>{{ item.title }}</h3></ion-card-header></ion-card> 
+
+  <ion-card>
+  <ion-item class="list-title" *ngIf= "item.title === 'Day of Surgery: At the Hospital'"><p>
+      Be Sure to Bring the Following:</p>
+  </ion-item>
+  <ion-list *ngIf= "item.title === 'Day of Surgery: At the Hospital'" >
+    <ion-item text-wrap>
+      <ion-label>This Device</ion-label>
+      <ion-checkbox checked="false" value="yes"></ion-checkbox>
+    </ion-item>
+    <ion-item text-wrap>
+    <ion-label>Incentive Spirometer</ion-label>
+    <ion-checkbox checked="false" value="yes"></ion-checkbox>
+  </ion-item>
+      <ion-item text-wrap>
+      <ion-label>Loose-fitting, Comfortable Clothes</ion-label>
+      <ion-checkbox  checked="false" value="yes"></ion-checkbox>
+    </ion-item>
+      <ion-item text-wrap>
+      <ion-label>1-3 Packs of Chewing Gum</ion-label>
+      <ion-checkbox checked="false" value="yes"></ion-checkbox>
+    </ion-item>
+      <ion-item text-wrap>
+      <ion-label>Glasses, Contacts, or Hearing Aids if You Use Them</ion-label>
+      <ion-checkbox checked="false" value="yes"></ion-checkbox>
+    </ion-item>
+      <ion-item text-wrap>
+      <ion-label>Socks, Slippers, and Your Own Pillow for Extra Comfort</ion-label>
+      <ion-checkbox checked="false" value="yes"></ion-checkbox>
+    </ion-item>
+      <ion-item text-wrap> <p> If you use the following, be sure to bring it as well: </p></ion-item>
+   
+      <ion-item text-wrap>
+      <ion-label>CPAP</ion-label>
+      <ion-checkbox checked="false" value="yes"></ion-checkbox>
+    </ion-item>
+      <ion-item text-wrap>
+      <ion-label>Wheelchair, Crutches, or Walker</ion-label>
+      <ion-checkbox checked="false" value="yes"></ion-checkbox>
+    </ion-item>
+    
+      </ion-list></ion-card>
+
+    <ion-card style="text-size:1.8em; padding:3px;" *ngIf= "item.title == 'Pre-Operative Holding Area (POHA)' || 'Preventing Blood Clots' == item.title ">
+        <ion-item>
+          <img class="above-below-image" src="{{item.image_1}}" > 
+        </ion-item >
+         <ion-item class="paragraph" text-wrap>
+              {{ item.description }}
+        </ion-item>
+       
+    </ion-card>
+    
+    <ion-card style="text-size:1.8em" *ngIf= "item.title == 'Pre-Op Pain Control' || 'Maintaining Body Temperature'==item.title">
+        <ion-item class="paragraph" padding text-wrap>{{ item.description_1 }}</ion-item>
+        <ion-item><img class="above-below-image" src="{{item.image_1}}"/></ion-item>
+    </ion-card>
+       
+  <!--  <ion-card style="text-size:1.8em" *ngIf= "item.title === 'Pre-Operative Holding Area (POHA)'">
+        <ion-item text-wrap>{{ item.description_2 }}</ion-item>
+    </ion-card>
+       
+      <ion-card style="text-size:1.8em" *ngIf= "item.title === 'Maintaining Body Temperature'"> 
+        <ion-item text-wrap>{{ item.description_3 }}</ion-item>
+      </ion-card>-->
+          
+    <ion-card style="text-size:1.8em" *ngIf= "item.title === 'Pre-Operative Holding Area (POHA)'">
+        
+        <ion-item class="paragraph" text-wrap> {{ item.description_4 }}</ion-item>
+        <ion-item> <img class="above-below-image" src="{{item.image_2}}" >  </ion-item>
+    </ion-card> 
+
+
+</ion-content>
